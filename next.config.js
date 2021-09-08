@@ -4,6 +4,11 @@ module.exports = {
     async redirects() {
         return [
             {
+                source: '/cashapp',
+                destination: 'https://cash.app/$cnrad1',
+                permanent: true,
+            },
+            {
                 source: '/',
                 destination: 'https://paypal.me/cnradd',
                 permanent: true,
