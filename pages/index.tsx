@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Head from 'next/head';
-
+import { useEffect } from 'react'
 export default function Home() {
 
     //thanks alistair vvv
-    addEventListener('fetch', (event: any) => {
-        event.respondWith(handleRequest(event.request));
-    });
+    useEffect(() => {
+        addEventListener('fetch', (event: any) => {
+            event.respondWith(handleRequest(event.request));
+        });
+    }, [])
 
     const document = `
         <!DOCTYPE html>
@@ -40,18 +42,9 @@ export default function Home() {
     //thanks alistair ^^^
 
     return(
-        <>
-            <Head>
-		        <title>pay.cnrad.dev</title>
-		        <meta name="theme-color" content="#4284f5" />
-		        <meta name="og:description" content="Pay Conrad via PayPal" />
-		        <meta name="og:title" content="pay.cnrad.dev" />
-		        <meta name="og:image" content="/paypal.png" />
-            </Head>
-            <Page>
-                <Text>Redirecting shortly...</Text>
-            </Page>
-        </>
+        <Page>
+            <Text>Redirecting shortly...</Text>
+        </Page>
     )
 }
 
